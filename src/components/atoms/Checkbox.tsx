@@ -1,13 +1,13 @@
 import React from 'react';
 
 export default function Checkbox({
-  name,
-  label,
+	name,
+	label,
 	checked,
 	setChecked,
 }: {
-  name: string;
-  label: string;
+	name: string;
+	label: string;
 	checked: boolean;
 	setChecked: (checked: boolean) => void;
 }) {
@@ -17,7 +17,7 @@ export default function Checkbox({
 				name={name}
 				type="checkbox"
 				checked={checked}
-				onClick={() => setChecked(!checked)}
+				onChange={() => setChecked(!checked)}
 			/>
 			<label htmlFor={name}>{label}</label>
 		</>
