@@ -12,7 +12,7 @@ export default function Checkbox({
 	setChecked: (checked: boolean) => void;
 }) {
 	return (
-		<>
+		<div>
 			<input
 				name={name}
 				type="checkbox"
@@ -20,6 +20,6 @@ export default function Checkbox({
 				onChange={() => setChecked(!checked)}
 			/>
 			<label htmlFor={name}>{label}</label>
-		</>
+		</div>
 	);
 }

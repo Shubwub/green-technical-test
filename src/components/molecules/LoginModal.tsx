@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { EmailInput, Checkbox, Submit } from '../atoms';
-import './LoginModal.scss';
 import { postLogin } from '../../services/api/login';
+
+import style from './LoginModal.module.scss'
 
 export default function LoginModal() {
 	const [email, setEmail] = useState<string>('');
@@ -13,7 +14,7 @@ export default function LoginModal() {
 	};
 
 	return (
-		<div className="login-modal">
+		<div className={style.loginModal}>
 			<img
 				src={'https://green.cdn.energy/branding/logo-r.svg'}
 				alt="Green logo"

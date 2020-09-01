@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './Submit.module.scss'
 
 export default function Submit({
 	id,
@@ -10,7 +11,7 @@ export default function Submit({
 	submit: (email: string) => void;
 }) {
 	return (
-		<button id={id} onClick={() => submit(email)}>
+		<button id={id} onClick={() => submit(email)} className={style.submitBtn}>
 			Sign In
 		</button>
 	);
