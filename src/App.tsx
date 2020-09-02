@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
+import { ToastProvider } from 'react-toast-notifications';
 import './App.scss';
 import LoginModal from './components/molecules/LoginModal';
 
 const App = () => (
 	<div className="App">
-		<LoginModal />
+		<ToastProvider>
+			<LoginModal />
+		</ToastProvider>
 	</div>
 );
 

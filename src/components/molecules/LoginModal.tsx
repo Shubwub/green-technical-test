@@ -1,27 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { EmailInput, Checkbox, Submit } from '../atoms';
 import { postLogin } from '../../services/api/login';
+import { useToasts } from 'react-toast-notifications';
 
 import style from './LoginModal.module.scss';
 
 export default function LoginModal() {
+	const { addToast } = useToasts();
 	const [email, setEmail] = useState<string>('');
 	const [remember, setRemember] = useState<boolean>(false);
 
 	const login = async (email: string) => {
-		const thing = await postLogin(email);
-		console.log(thing);
+		const loginAttempt = await postLogin(email);
+		if (loginAttempt.error) {
+			addToast(loginAttempt.error, { appearance: 'error' });
+		} else {
+			addToast(loginAttempt.success, { appearance: 'success' });
+		}
 	};
 
 	useEffect(() => {
 		const email = localStorage.getItem('email');
+		const remembering = localStorage.getItem('remembering');
+		if (remembering) setRemember(true);
 		if (email) setEmail(email);
 	}, []);
 
+	const rememberUser = () => {
+		localStorage.setItem('email', email);
+		localStorage.setItem('remembering', 'true');
+	};
+
+	const forgetUser = () => {
+		localStorage.removeItem('email');
+		localStorage.removeItem('remembering');
+	};
+
 	useEffect(() => {
-		remember
-			? localStorage.setItem('email', email)
-			: localStorage.removeItem('email');
+		remember ? rememberUser() : forgetUser();
 	}, [remember]);
 
 	return (
