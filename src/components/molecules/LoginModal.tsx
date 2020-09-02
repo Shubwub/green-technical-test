@@ -10,7 +10,8 @@ export default function LoginModal() {
 	const [email, setEmail] = useState<string>('');
 	const [remember, setRemember] = useState<boolean>(false);
 
-	const login = async () => {
+	const login = async (e: any) => {
+		e.preventDefault();
 		const loginAttempt = await postLogin(email);
 		if (loginAttempt.error) {
 			addToast(loginAttempt.error, { appearance: 'error' });
