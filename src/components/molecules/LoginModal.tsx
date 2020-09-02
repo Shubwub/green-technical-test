@@ -22,8 +22,10 @@ export default function LoginModal() {
 	useEffect(() => {
 		const email = localStorage.getItem('email');
 		const remembering = localStorage.getItem('remembering');
-		if (remembering) setRemember(true);
-		if (email) setEmail(email);
+		if (remembering && email) {
+			setRemember(true);
+			setEmail(email);
+		}
 	}, []);
 
 	const rememberUser = () => {
