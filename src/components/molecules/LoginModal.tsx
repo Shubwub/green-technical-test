@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { EmailInput, Checkbox, Submit } from '../atoms';
 import { postLogin } from '../../services/api/login';
 
-import style from './LoginModal.module.scss'
+import style from './LoginModal.module.scss';
 
 export default function LoginModal() {
 	const [email, setEmail] = useState<string>('');
@@ -12,6 +12,17 @@ export default function LoginModal() {
 		const thing = await postLogin(email);
 		console.log(thing);
 	};
+
+	useEffect(() => {
+		const email = localStorage.getItem('email');
+		if (email) setEmail(email);
+	}, []);
+
+	useEffect(() => {
+		remember
+			? localStorage.setItem('email', email)
+			: localStorage.removeItem('email');
+	}, [remember]);
 
 	return (
 		<div className={style.loginModal}>
