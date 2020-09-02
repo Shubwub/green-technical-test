@@ -41,7 +41,7 @@ export default function LoginModal() {
 
 	useEffect(() => {
 		remember ? rememberUser() : forgetUser();
-	}, [remember]);
+	}, [remember, rememberUser, forgetUser]);
 
 	return (
 		<div className={style.loginModal}>
