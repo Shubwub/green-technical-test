@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './Checkbox.module.scss';
 
 export default function Checkbox({
 	name,
@@ -12,14 +13,17 @@ export default function Checkbox({
 	setChecked: (checked: boolean) => void;
 }) {
 	return (
-		<div>
+		<label htmlFor={name} className={style.label}>
 			<input
 				name={name}
+				id={name}
 				type="checkbox"
 				checked={checked}
 				onChange={() => setChecked(!checked)}
+				className={style.input}
 			/>
-			<label htmlFor={name}>{label}</label>
-		</div>
+			<span className={style.checkbox}></span>
+			{label}
+		</label>
 	);
 }

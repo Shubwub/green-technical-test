@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './EmailInput.module.scss';
 
 export default function EmailInput({
 	name,
@@ -10,14 +11,16 @@ export default function EmailInput({
 	setEmail: (email: string) => void;
 }) {
 	return (
-		<>
-			<label htmlFor={name}>Email Address</label>
+		<label htmlFor={name} className={style.label}>
+			Email Address
 			<input
 				name={name}
+				id={name}
 				type="email"
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}
+				className={style.input}
 			/>
-		</>
+		</label>
 	);
 }
