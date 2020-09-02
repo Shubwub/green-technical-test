@@ -21,9 +21,10 @@ export default function Checkbox({
 				type="checkbox"
 				checked={checked}
 				onChange={() => setChecked(!checked)}
-				className={style.input}
+        className={style.input}
+        tabIndex={-1}
 			/>
-			<span className={style.checkbox}></span>
+			<span className={style.checkbox} tabIndex={0}></span>
 			{label}
 		</label>
 	);
