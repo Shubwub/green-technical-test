@@ -7,8 +7,8 @@ const instance = axios.create({
 export async function postLogin(email: string) {
   try {
     const { data }: any = await instance.post('/login', { email })
-    return { success: 'logged in successffully!...somehow...', error: false };
+    return { success: 'logged in successfully!...somehow...', error: false };
   } catch (e) {
-    return { error: 'logged in unsuccessffully! As expected...', success: false };
+    return { error: 'logged in unsuccessfully! As expected...', success: false };
   }
 }
