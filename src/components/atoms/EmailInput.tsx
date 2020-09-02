@@ -15,11 +15,13 @@ export default function EmailInput({
 			Email Address
 			<input
 				name={name}
-				id={name}
+        id={name}
+        data-cy={`${name}-cy`}
 				type="email"
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}
-				className={style.input}
+        className={style.input}
+        required
 			/>
 		</label>
 	);

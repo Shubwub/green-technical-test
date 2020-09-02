@@ -1,17 +1,9 @@
 import React from 'react';
-import style from './Submit.module.scss'
+import style from './Submit.module.scss';
 
-export default function Submit({
-	id,
-	submit,
-	email,
-}: {
-	id: string;
-	email: string;
-	submit: (email: string) => void;
-}) {
+export default function Submit({ id }: { id: string }) {
 	return (
-		<button id={id} onClick={() => submit(email)} className={style.submitBtn}>
+		<button id={id} data-cy={`${id}-cy`} className={style.submitBtn}>
 			Sign In
 		</button>
 	);

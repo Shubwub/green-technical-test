@@ -10,7 +10,7 @@ export default function LoginModal() {
 	const [email, setEmail] = useState<string>('');
 	const [remember, setRemember] = useState<boolean>(false);
 
-	const login = async (email: string) => {
+	const login = async () => {
 		const loginAttempt = await postLogin(email);
 		if (loginAttempt.error) {
 			addToast(loginAttempt.error, { appearance: 'error' });
@@ -50,14 +50,16 @@ export default function LoginModal() {
 			/>
 			<h1>Example login screen</h1>
 			<h2>Getting started with Green.</h2>
-			<EmailInput name="email" email={email} setEmail={setEmail} />
-			<Checkbox
-				name="device-checkbox"
-				label="Remember this device"
-				checked={remember}
-				setChecked={setRemember}
-			/>
-			<Submit id="sign-in" submit={login} email={email} />
+			<form onSubmit={login} id="login-form" data-cy="login-form-cy">
+				<EmailInput name="email" email={email} setEmail={setEmail} />
+				<Checkbox
+					name="device-checkbox"
+					label="Remember this device"
+					checked={remember}
+					setChecked={setRemember}
+				/>
+				<Submit id="sign-in" />
+			</form>
 		</div>
 	);
 }

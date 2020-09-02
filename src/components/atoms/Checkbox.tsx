@@ -17,6 +17,7 @@ export default function Checkbox({
 			<input
 				name={name}
 				id={name}
+				data-cy={`${name}-cy`}
 				type="checkbox"
 				checked={checked}
 				onChange={() => setChecked(!checked)}
