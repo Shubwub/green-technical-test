@@ -1,7 +1,22 @@
 @import '../../variables.scss';
 
 .submitBtn {
-  border: 1px solid $clickable-border;
-  border-radius: 5px;
-  background-color: $clickable-bg;
+	border: 1px solid $clickable-border;
+	border-radius: $border-radius;
+	background-color: $clickable-bg;
+	padding: 15px 30px;
+	font-size: 1rem;
+	font-family: 'Gotham';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: lighter;
+	box-sizing: border-box;
+	transition: 0.3s ease-in-out;
+	&:hover {
+		transition: 0.3s ease-in-out;
+		background-color: $checkbox-colour;
+		color: white;
+		cursor: pointer;
+		border: 1px solid $checkbox-colour;
+	}
 }

@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+.label {
+  width: 100%;
+  &:focus-within {
+    color: $checkbox-colour;
+  }
+}
+
+.input {
+  width: 100%;
+  margin: 10px 0;
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+  color: $text-colour;
+	border-radius: $border-radius;
+  border: 1px solid $clickable-border;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  &:focus {
+    border: 2px solid $checkbox-colour;
+  }
+}
