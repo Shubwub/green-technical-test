@@ -8,6 +8,14 @@
        url('./assets/fonts/GothamMedium.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Gotham';
+  font-style: lighter;
+  font-weight: 200;
+  src: local('Gotham'),
+       url('./assets/fonts/GothamLight.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   font-family: 'Gotham';
