@@ -4,7 +4,7 @@
 	display: block;
 	position: relative;
 	padding-left: 30px;
-	margin-bottom: 60px;
+	margin-bottom: 55px;
 	cursor: pointer;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -13,10 +13,6 @@
   color: $heading-colour;
   font-size: 0.8rem;
   line-height: 20px;
-}
-
-.label:hover .input ~ .checkbox {
-	background-color: #ccc;
 }
 
 .input {
@@ -42,7 +38,7 @@
 	left: 0;
 	height: 20px;
 	width: 20px;
-  border-radius: $border-radius;
+  border-radius: 5px;
   box-sizing: border-box;
   border: 1px solid $clickable-border;
 	&::after {
