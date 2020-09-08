@@ -4,6 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $background;
   height: 100vh;
+}
+
+body {
+  background-color: $background;
 }
